@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门威尼斯人 · 专题页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: linear-gradient(165deg, #fce6c9 0%, #f7d4a8 40%, #edc18c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1.2rem;
+            line-height: 1.7;
+            color: #2d241a;
+        }
+
+        .container {
+            max-width: 960px;
+            width: 100%;
+        }
+
+        /* —— 主卡片 —— */
+        .feature-card {
+            background: rgba(255, 252, 245, 0.92);
+            backdrop-filter: blur(3px);
+            border-radius: 48px 48px 40px 40px;
+            box-shadow: 0 20px 40px -12px rgba(110, 70, 30, 0.25), 0 8px 20px rgba(0,0,0,0.04);
+            padding: 2.8rem 2.5rem 3.2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        /* —— 横幅区 —— */
+        .banner {
+            background: linear-gradient(130deg, #b68a5c 0%, #d9af7a 60%, #c6975b 100%);
+            border-radius: 28px;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: #fcf6ea;
+            box-shadow: inset 0 1px 2px rgba(255, 245, 210, 0.4);
+        }
+
+        .banner h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 4px rgba(70, 40, 10, 0.2);
+        }
+
+        .banner .sub {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            opacity: 0.9;
+            border-top: 1px solid rgba(255, 235, 200, 0.35);
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.2rem;
+        }
+
+        /* —— 背景说明 —— */
+        .context-note {
+            background: #f5ede1;
+            border-radius: 40px;
+            padding: 1.6rem 2rem;
+            margin-bottom: 2.2rem;
+            border-left: 5px solid #cfa66b;
+            font-size: 0.97rem;
+            color: #3e3024;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .context-note strong {
+            color: #8d673b;
+            font-weight: 600;
+        }
+
+        /* —— 三段自然介绍 —— */
+        .intro-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin: 2rem 0 2.6rem;
+        }
+
+        .intro-item {
+            background: rgba(250, 244, 234, 0.55);
+            padding: 1.4rem 1.8rem;
+            border-radius: 60px 24px 24px 60px;
+            border-left: 8px solid #dbb48b;
+            transition: background 0.2s;
+        }
+
+        .intro-item:nth-child(2) {
+            border-left-color: #be9a72;
+            border-radius: 24px 60px 60px 24px;
+            margin-left: 1.2rem;
+            background: rgba(248, 238, 224, 0.6);
+        }
+
+        .intro-item:nth-child(3) {
+            border-left-color: #a88257;
+            border-radius: 40px 20px 40px 20px;
+        }
+
+        .intro-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #7a5e3e;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .intro-item p {
+            font-size: 0.97rem;
+            color: #3b2f22;
+        }
+
+        /* —— 特点场景（杂志式两栏） —— */
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0 2rem;
+        }
+
+        .mag-item {
+            background: rgba(235, 218, 194, 0.25);
+            border-radius: 32px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid rgba(200, 170, 135, 0.2);
+            transition: 0.15s;
+        }
+
+        .mag-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #6f5438;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .mag-item p {
+            font-size: 0.9rem;
+            color: #4b3b2b;
+            opacity: 0.9;
+        }
+
+        .mag-item .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #dbb48b;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+
+        /* —— FAQ 摘要 —— */
+        .faq-mini {
+            background: #efe5d6;
+            border-radius: 40px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 2rem;
+            font-size: 0.93rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 600;
+            color: #6b4f32;
+            cursor: default;
+            padding: 0.2rem 0;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-mini p {
+            margin-top: 0.6rem;
+            color: #3d2e1d;
+        }
+
+        /* —— 页尾提示 & 链接 —— */
+        .footer-note {
+            margin-top: 2.2rem;
+            padding-top: 1.6rem;
+            border-top: 2px dashed #d8bc9c;
+            text-align: center;
+            font-size: 0.96rem;
+            color: #4f3b28;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-note a {
+            color: #6f4f2e;
+            text-decoration: none;
+            font-weight: 500;
+            background: #efe3d3;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            transition: background 0.15s, box-shadow 0.1s;
+            box-shadow: 0 1px 3px rgba(90, 60, 30, 0.12);
+            display: inline-block;
+            line-height: 1.9;
+        }
+
+        .footer-note a:hover {
+            background: #e4ceb5;
+            box-shadow: 0 2px 8px rgba(120, 80, 40, 0.18);
+        }
+
+        .footer-note .small-hint {
+            font-size: 0.82rem;
+            color: #7a664e;
+            opacity: 0.75;
+            letter-spacing: 0.3px;
+        }
+
+        /* —— 响应式 —— */
+        @media (max-width: 700px) {
+            body { padding: 1.5rem 0.8rem; }
+            .feature-card { padding: 1.8rem 1rem 2.2rem; border-radius: 36px; }
+            .banner h1 { font-size: 2.1rem; }
+            .banner .sub { font-size: 0.85rem; letter-spacing: 2px; }
+            .intro-item { border-radius: 30px 16px 16px 30px; padding: 1rem 1.2rem; }
+            .intro-item:nth-child(2) { margin-left: 0.2rem; border-radius: 16px 30px 30px 16px; }
+            .intro-item:nth-child(3) { border-radius: 30px 14px 30px 14px; }
+            .magazine-grid { grid-template-columns: 1fr; gap: 0.9rem; }
+            .faq-mini { padding: 1rem 1.2rem; }
+            .context-note { padding: 1.2rem 1.2rem; }
+        }
+
+        @media (max-width: 460px) {
+            .banner { padding: 1.3rem; }
+            .banner h1 { font-size: 1.7rem; }
+            .footer-note a { font-size: 0.95rem; padding: 0.2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="feature-card">
+
+        <!-- 首页横幅 -->
+        <div class="banner">
+            <h1>威尼斯人 · 再次回望</h1>
+            <div class="sub">MACAU · 水城映象</div>
+        </div>
+
+        <!-- 背景说明 -->
+        <div class="context-note">
+            <strong>◈ 城市肌理中的坐标</strong> 坐落于澳门路氹金光大道，以威尼斯水乡为蓝本构建的度假综合体，自开幕以来持续吸引全球旅人。其室内运河、穹顶画廊与石板巷道并非单纯复刻，而是以当代空间语言重新诠释了运河城市的漫游感。对于曾到访者而言，每一次重返都可能发现被忽略的细节：挑高拱顶下的光线变化、不同时段的拱桥倒影、以及隐藏在各处转角的手工细节。
+        </div>
+
+        <!-- 三段自然介绍：从再次访问、收藏、持续关注展开 -->
+        <div class="intro-block">
+            <div class="intro-item">
+                <h3>· 再访的意义</h3>
+                <p>第一次到访往往被标志性场景占据注意力。第二次、第三次漫步时，才会注意到圣马可广场旁侧的回廊、运河岔口处的手绘船夫唱谣，或是傍晚时分灯光映在贡多拉上的暖色。重游本身就构成了一种深度阅读，熟悉与陌生在步履间重新平衡。</p>
+            </div>
+            <div class="intro-item">
+                <h3>· 收藏的瞬间</h3>
+                <p>真正值得放入个人收藏的并非纪念品商店的物件，而是那些难以复制的感知：从大运河购物中心透过玻璃洒下的斜阳、总督宫壁画前驻足的安静五秒，或是清晨人少时石板路上自己的脚步声。这些片段构成了私人化的「威尼斯人记忆库」，每一次回看都像翻开一本旅行手札。</p>
+            </div>
+            <div class="intro-item">
+                <h3>· 持续关注的理由</h3>
+                <p>一座综合度假村在多年运营中不断调整细节：展览空间的艺术轮换、餐厅菜单的季节更新、公共区域的微改造。对于持续关注者而言，它并非静止的背景，而是一个始终在呼吸的场所。保持关注，意味着可以捕捉到那些只有常访者才能察觉的演变。</p>
+            </div>
+        </div>
+
+        <!-- 特点场景（杂志两栏） -->
+        <div class="magazine-grid">
+            <div class="mag-item">
+                <h4><span class="dot"></span> 拱桥与水巷</h4>
+                <p>室内运河全长近200米，桥梁采用伊斯特拉石与大理石纹饰，拱底雕有简洁浮雕。不同时段的光线在水面产生灰度变化，摄影爱好者常在此流连。</p>
+            </div>
+            <div class="mag-item">
+                <h4><span class="dot"></span> 穹顶与壁画</h4>
+                <p>中央穹顶以威尼斯圣马可大教堂为灵感，壁画由意大利画师团队绘制，描绘了海洋贸易与神话场景。仰头细看时，能发现藏在云层中的小型寓言图案。</p>
+            </div>
+            <div class="mag-item">
+                <h4><span class="dot"></span> 石板巷道</h4>
+                <p>地面铺设的天然石板来自意大利北部，每块形状略有差异。巷道两侧的店铺橱窗设计克制，保留了文艺复兴式的窗框比例，适合慢速行走观看。</p>
+            </div>
+            <div class="mag-item">
+                <h4><span class="dot"></span> 光影计划</h4>
+                <p>公共区域采用间接照明与暖色点光源，模拟威尼斯日落时段的色温。傍晚六点后，灯光逐渐向琥珀色偏移，塑造出更具戏剧性的漫步氛围。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <details open>
+                <summary>⸻ 常见再访疑问摘要 ⸻</summary>
+                <p><strong>问：</strong> 之前去过的店铺或体验项目是否还在？<br>
+                <strong>答：</strong> 核心商业与运河游览保持稳定，但部分快闪空间和临时展览每年会调整，具体以现场公告为准。持续关注官方动态有助于规划下一次行程。</p>
+                <p style="margin-top: 0.5rem;"><strong>问：</strong> 是否适合独自重游？<br>
+                <strong>答：</strong> 非常适合。建筑细节与空间节奏在独行时更容易被感知，且购物中心内的休憩角落数量充足，可以随时停下来观察周围。</p>
+            </details>
+        </div>
+
+        <!-- 页尾访问提示 + 链接 -->
+        <div class="footer-note">
+            <div>
+                如果你想更深入地了解这座水城综合体的最新动向与空间叙事，
+                可以随时查阅 <a href="https://official-venetian.com">澳门威尼斯人</a> 的官方页面，
+                那里保留了完整的背景与实时信息。
+            </div>
+            <div class="small-hint">—— 杂志专题 · 重访与收藏 ——</div>
+        </div>
+
+    </div><!-- feature-card end -->
+</div><!-- container end -->
+</body>
+</html>
