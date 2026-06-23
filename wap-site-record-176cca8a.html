@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼 · 信息入口说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9fafb;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.02);
+      padding: 2.5rem 2rem;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .container {
+        padding: 1.8rem 1.2rem;
+        border-radius: 16px;
+      }
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-bottom: 2.4rem;
+      border-bottom: 1px solid #ecf1f6;
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1e293b;
+      margin: 2rem 0 0.75rem 0;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2::before {
+      content: "▍";
+      color: #94a3b8;
+      font-weight: 300;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    a {
+      color: #0369a1;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    a:hover {
+      border-bottom-color: #0369a1;
+      color: #0b4f6c;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .card {
+      background: #f1f5f9;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      transition: background 0.15s;
+    }
+    .card:hover {
+      background: #e9edf2;
+    }
+    .card strong {
+      display: block;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+    .card span {
+      font-size: 0.9rem;
+      color: #475569;
+      display: block;
+    }
+
+    .info-block {
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 1.2rem 1.2rem 1rem 1.2rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.8rem 0;
+    }
+    .info-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-summary {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+    .faq-summary li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #ecf1f6;
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+    .faq-summary li:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 450;
+      color: #1e293b;
+      min-width: 4.2rem;
+    }
+    .faq-a {
+      color: #475569;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #1e293b;
+      padding: 0.1rem 0.65rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-left: 0.4rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #eef2f6;
+      margin: 2rem 0 1rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>乐鱼 · 信息索引</h1>
+  <div class="subhead">页面说明 / 稳定入口 · 知识库式整理</div>
+
+  <p>
+    此页面向对<strong>乐鱼</strong>相关资源有查阅需求的访客，提供一份结构清晰的说明与指引。
+    以下内容围绕主要入口、功能特性、使用场景以及常见问题摘要展开，方便快速了解基本信息。
+    所有描述均基于公开资料整理，力求准确与平实。
+  </p>
+
+  <h2>主要入口</h2>
+  <p>
+    如需直接访问平台页面，可通过以下链接前往<strong>乐鱼</strong>：<br>
+    <a href="https://wap-site-leyu.com">乐鱼</a> —— 该地址为当前推荐使用的稳定页面入口，适合在移动设备及桌面浏览器中打开。
+    若遇到访问限制，可尝试更换网络环境或清除浏览器缓存后重试。
+  </p>
+
+  <h2>功能特点</h2>
+  <div class="card-grid">
+    <div class="card">
+      <strong>界面适配</strong>
+      <span>针对手机与平板做了响应式调整，核心功能区域清晰可辨，常用操作路径较短。</span>
+    </div>
+    <div class="card">
+      <strong>信息结构</strong>
+      <span>分类导航与内容分区相对明确，方便按需查找对应模块，减少无关跳转。</span>
+    </div>
+    <div class="card">
+      <strong>加载表现</strong>
+      <span>静态资源经过基础优化，首屏加载速度在多数网络条件下表现稳定，无过度复杂动效。</span>
+    </div>
+    <div class="card">
+      <strong>基础兼容</strong>
+      <span>支持主流浏览器（Chrome、Safari、Edge 及 Firefox），未使用实验性 Web API。</span>
+    </div>
+  </div>
+
+  <h2>使用场景举例</h2>
+  <p>
+    · 日常信息查阅：通过首页聚合入口快速浏览分类内容，适合碎片化阅读场景。<br>
+    · 移动端快速访问：无需安装本地应用，浏览器直接加载，节省设备存储空间。<br>
+    · 功能探索：页面内设置多个引导区域，适合初次接触 <a href="https://wap-site-leyu.com">乐鱼</a> 的用户逐步了解布局与用途。
+  </p>
+
+  <h2>提示与说明</h2>
+  <div class="info-block">
+    <p>
+      <strong>· 访问稳定性</strong><br>
+      建议使用网络状况良好的 Wi-Fi 或 4G/5G 连接。部分区域运营商可能存在域名解析延迟，可尝试更换 DNS（如 114.114.114.114 或 8.8.8.8）。
+    </p>
+    <p>
+      <strong>· 浏览器设置</strong><br>
+      若页面样式显示异常，请确认未开启“阻止第三方 Cookie”或“阻止所有 Cookie”等极端隐私模式。同时建议保持浏览器为较新版本。
+    </p>
+    <p>
+      <strong>· 内容时效</strong><br>
+      页面内容与功能入口可能随运营调整发生变化，本站仅提供当前阶段的说明参考，不保证所有描述长期一致。
+    </p>
+  </div>
+
+  <h2>常见问题摘要</h2>
+  <ul class="faq-summary">
+    <li>
+      <span class="faq-q">Q1</span>
+      <span class="faq-a">页面加载不全怎么办？<br>首先检查网络连接，其次尝试强制刷新（Ctrl+F5 或 Cmd+Shift+R）。如问题持续，可考虑更换浏览器或设备。</span>
+    </li>
+    <li>
+      <span class="faq-q">Q2</span>
+      <span class="faq-a">乐鱼是否支持深色模式？<br>当前版本未内置深色主题切换，但系统级深色模式对部分元素有基础适配，整体仍以浅色为主。</span>
+    </li>
+    <li>
+      <span class="faq-q">Q3</span>
+      <span class="faq-a">如何反馈页面问题？<br>目前暂未设置独立反馈通道。建议通过页面内已有的联系途径或相关社区进行说明。</span>
+    </li>
+  </ul>
+
+  <hr>
+  <div class="footer-note">
+    本页为知识库式信息汇总 · 更新于近期 · 仅供参考<br>
+    页面入口：<a href="https://wap-site-leyu.com">乐鱼</a>
+  </div>
+</div>
+</body>
+</html>
